@@ -832,7 +832,7 @@
 .video-section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
 }
 
 .video-item {
@@ -841,9 +841,12 @@
 
 .video-item video {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     height: auto;
 }
+        .video-item:nth-child(3) video {
+            transform: rotate(180deg);
+        }
 
         .video-item {
             text-align: center;
