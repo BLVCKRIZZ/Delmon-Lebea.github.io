@@ -831,20 +831,20 @@
         /* Video Section */
 .video-section {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 15px;
-    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .video-item {
-    flex: 1;
-    max-width: 32%;
+    flex: 0 1 30%;
+    min-width: 280px;
+    text-align: center;
 }
 
 .video-item video {
     width: 100%;
-    max-width: 300px;
     height: auto;
 }
         .video-item:nth-child(3) video {
