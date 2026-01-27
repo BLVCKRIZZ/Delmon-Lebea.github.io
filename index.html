@@ -829,11 +829,20 @@
         }
 
         /* Video Section */
-        .video-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-        }
+.video-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.video-item {
+    width: 100%;
+}
+
+.video-item video {
+    width: 100%;
+    height: auto;
+}
 
         .video-item {
             text-align: center;
