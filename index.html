@@ -830,13 +830,16 @@
 
         /* Video Section */
 .video-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: nowrap;
 }
 
 .video-item {
-    width: 100%;
+    flex: 1;
+    max-width: 32%;
 }
 
 .video-item video {
