@@ -1840,6 +1840,20 @@ UKC # P684-821, Redwing Tara (TAN1–Natural Abilities Test) UKC # P502-423, Fly
                 img.style.cursor = 'zoom-in';
                 img.addEventListener('click', () => openLightbox(idx));
             });
+            // Open a gallery thumbnail in the page lightbox (single click)
+const galleryImgs = document.querySelectorAll('.gallery-grid .gallery-item img');
+
+galleryImgs.forEach(img => {
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', () => {
+    if (!lightbox || !lightboxImg) return;
+    lightbox.classList.add('open');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || '';
+    // prevent page scrolling while lightbox is open
+    document.body.style.overflow = 'hidden';
+  });
+});
 
             function openLightbox(idx) {
                 if (!lightbox || !lightboxImg) return;
