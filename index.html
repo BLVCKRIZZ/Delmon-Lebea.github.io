@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) 
+  gtag('js', new Date());-->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VREJ84TQWJ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
   gtag('config', 'G-VREJ84TQWJ');
 </script>
@@ -1288,6 +1288,54 @@ footer {
 }
 
 /* ===== End of overrides ===== */  
+/* ===== hero: image element replacement & desktop behavior ===== */
+/* Paste this just before the closing </style> in your index.html */
+
+.hero {
+  position: relative;              /* container for absolute .hero-bg */
+  min-height: 65vh !important;     /* avoid forcing 100vh */
+  height: auto !important;
+  padding-top: 80px;               /* keeps header offset */
+  overflow: hidden;                /* prevent giant children from expanding page */
+  background-color: var(--light);  /* fallback if image fails */
+}
+
+/* Remove any existing background image on .hero (override) */
+.hero { background: none !important; }
+
+/* The hero image element fills the hero area */
+.hero-bg {
+  position: absolute;
+  inset: 0;                        /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;               /* mobile/small screens: cover */
+  object-position: center;
+  z-index: 0;
+  display: block;
+}
+
+/* Keep the content above the image */
+.hero .hero-content {
+  position: relative;
+  z-index: 5;
+  color: white; /* keep text visible */
+}
+
+/* Desktop: show the whole image (no extreme zoom) */
+@media (min-width: 993px) {
+  .hero-bg {
+    object-fit: contain !important; /* show full image without cropping on desktop */
+  }
+  .hero { min-height: 55vh !important; } /* slightly smaller on large screens */
+}
+
+/* Tighten safety on very large screens */
+@media (min-width: 1600px) {
+  .hero { min-height: 50vh !important; }
+}
+/* ===== end hero fixes ===== */
+            
     </style>
     <!-- Favicons: browsers will pick the most appropriate file/size -->
     <!-- SVG first (modern browsers) -->
@@ -1330,15 +1378,17 @@ footer {
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Ghillie of Wisconsin</h1>
-                <p>Field-Bred Irish Setters</p>
-                <a href="#contact" class="btn">Inquire About Breeding</a>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+  <!-- hero background image as an <img> for consistent sizing -->
+  <img class="hero-bg" src="IMG-20250916-WA0011.jpg" alt="Ghillie of Wisconsin">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Ghillie of Wisconsin</h1>
+      <p>Field-Bred Irish Setters</p>
+      <a href="#contact" class="btn">Inquire About Breeding</a>
+    </div>
+  </div>
+</section>
 
     <!-- About Section -->
     <section id="about" class="about">
