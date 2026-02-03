@@ -1240,7 +1240,54 @@ body {
           .gallery-grid, .masonry-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
           .gallery-item, .masonry-item { height: auto !important; }
         }
-            
+          /* ===== Desktop layout fixes — add this at the END of your <style> block ===== */
+
+/* 1) Make hero flexible (no forced 100vh) and account for fixed header height */
+.hero {
+  min-height: calc(100vh - 80px); /* leave room for fixed header */
+  height: auto !important;
+  padding-top: 80px;              /* same header offset as existing code */
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Reduce hero height on very large screens so it doesn't dominate the page */
+@media (min-width: 1600px) {
+  .hero { min-height: 65vh; }
+}
+
+/* 2) Prevent gallery images from being aggressively cropped on desktop */
+@media (min-width: 993px) {
+  .gallery-item img {
+    object-fit: contain !important;
+    object-position: center;
+    background-color: var(--light);
+    width: 100%;
+    height: auto !important;
+  }
+  .gallery-item {
+    aspect-ratio: auto;
+    height: auto !important;
+  }
+}
+
+/* 3) Limit carousel / 3D container maximum height so it can't create huge gaps */
+.carousel-container {
+  max-height: 80vh;
+  overflow: hidden;
+}
+.image-carousel, .image-carousel .carousel-track {
+  height: auto !important;
+}
+
+/* 4) Optional: tighten footer spacing on very tall pages */
+footer {
+  padding-bottom: 30px;
+}
+
+/* ===== End of overrides ===== */  
     </style>
     <!-- Favicons: browsers will pick the most appropriate file/size -->
     <!-- SVG first (modern browsers) -->
