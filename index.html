@@ -35,7 +35,7 @@
             .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
             .image-carousel { height: 320px; }
             .carousel-slide img { max-height: 260px; }
-            .video-item video { max-height: 220px; }
+            .video-item video { aspect-ratio: 16/9; object-fit: cover; max-height: 260px; }
             .carousel-btn { padding: 10px 12px; font-size: 20px; }
         }
 
@@ -54,7 +54,7 @@
         @media (max-width: 480px) {
             .image-carousel { height: 200px; }
             .carousel-slide img { max-height: 160px; }
-            .video-item video { max-height: 160px; }
+            .video-item video { aspect-ratio: 16/9; object-fit: cover; max-height: 180px; }
             .carousel-btn { font-size: 16px; padding: 6px 8px; }
             .section-title { font-size: 1.4rem; }
             .gallery-item-overlay h3 { font-size: 0.95rem; padding: 8px; }
@@ -841,10 +841,12 @@
 
         .video-item video {
             width: 100%;
-            max-height: 200px; /* Compact size */
+            aspect-ratio: 16/9;
+            object-fit: cover;
             border-radius: 10px;
             cursor: pointer;
             transition: transform 0.3s;
+            max-height: 360px;
         }
 
         .video-item video:hover {
@@ -1599,6 +1601,13 @@ UKC # P684-821, Redwing Tara (TAN1–Natural Abilities Test) UKC # P502-423, Fly
                         Your browser does not support the video tag.
                     </video>
                     <h4>Backing Video</h4>
+                </div>
+                <div class="video-item">
+                    <video controls>
+                        <source src="assets/videos/Training on quail.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h4>Training on Quail</h4>
                 </div>
             </div>
         </div>
