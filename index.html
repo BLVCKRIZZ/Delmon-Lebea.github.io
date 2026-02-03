@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) 
-  gtag('js', new Date());-->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VREJ84TQWJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-
-  gtag('config', 'G-VREJ84TQWJ');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red Irish Setter</title>
+    <title>Rollicking Red Irish Setter Stud Services - Breeding Excellence</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
@@ -31,15 +22,14 @@
             box-sizing: border-box;
         }
         
-body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--dark);
-    background-color: var(--light);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
 
-/* Additional Responsive Adjustments (Tablets & Phones) */
+        /* Additional Responsive Adjustments (Tablets & Phones) */
         @media (max-width: 1024px) {
             .container { width: 95%; max-width: 960px; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
@@ -59,19 +49,6 @@ body {
             header { padding: 0.6rem 0; }
             .logo-text { font-size: 1.25rem; }
             body { font-size: 15px; }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background-color: white;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                width: 100%;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            }
-            .nav-links.active { display: flex; }
-            .hamburger { display: block; }
-            .search-bar { display: none; }
         }
 
         @media (max-width: 480px) {
@@ -82,6 +59,7 @@ body {
             .section-title { font-size: 1.4rem; }
             .gallery-item-overlay h3 { font-size: 0.95rem; padding: 8px; }
             .btn { padding: 10px 18px; }
+        }
         }
         
         h1, h2, h3, h4 {
@@ -720,7 +698,89 @@ body {
                 display: none;
             }
 
+            /* Carousel Section */
+.carousel-section {
+    padding: 50px 0;
+    background-color: var(--light);
+    text-align: center;
+}
 
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Increased width for larger images */
+    height: 500px; /* Adjusted height for rectangular images */
+    margin: 0 auto;
+    perspective: 1200px; /* Creates the 3D effect */
+}
+
+.carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotateCarousel 15s linear infinite; /* Smooth rotation */
+}
+
+.carousel img {
+    position: absolute;
+    width: 300px; /* Rectangular image width */
+    height: 200px; /* Rectangular image height */
+    object-fit: cover;
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Position images evenly around the circle */
+.carousel img:nth-child(1) {
+    transform: rotateY(0deg) translateZ(400px);
+}
+.carousel img:nth-child(2) {
+    transform: rotateY(45deg) translateZ(400px);
+}
+.carousel img:nth-child(3) {
+    transform: rotateY(90deg) translateZ(400px);
+}
+.carousel img:nth-child(4) {
+    transform: rotateY(135deg) translateZ(400px);
+}
+.carousel img:nth-child(5) {
+    transform: rotateY(180deg) translateZ(400px);
+}
+.carousel img:nth-child(6) {
+    transform: rotateY(225deg) translateZ(400px);
+}
+.carousel img:nth-child(7) {
+    transform: rotateY(270deg) translateZ(400px);
+}
+.carousel img:nth-child(8) {
+    transform: rotateY(315deg) translateZ(400px);
+}
+
+/* Animation for rotating the carousel */
+@keyframes rotateCarousel {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 100%;
+        height: 400px;
+    }
+
+    .carousel img {
+        width: 200px;
+        height: 150px;
+    }
+}
+        }
 
         /* Highlighted text style */
         .highlight {
@@ -760,24 +820,12 @@ body {
         }
 
         /* Video Section */
-.video-section {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+        .video-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
 
-.video-item {
-    flex: 0 1 30%;
-    min-width: 280px;
-    text-align: center;
-}
-
-.video-item video {
-    width: 100%;
-    height: auto;
-}
         .video-item {
             text-align: center;
             background-color: var(--light);
@@ -1219,137 +1267,16 @@ body {
         height: 200px;
     }
 }
-            @media (max-width: 768px){
-            body{font-size:16px;padding:10px}
-            .hamburger{display:block}
-            .nav-links{display:none;flex-direction:column;width:100%;gap:0}
-            .nav-links{position:absolute;top:64px;left:0;right:0;background:var(--light);box-shadow:0 6px 18px rgba(0,0,0,0.08);padding:0;margin:0;z-index:999}
-            .nav-links.open{display:flex}
-            .nav-links li{width:100%}
-            .nav-links a{display:block;padding:12px 16px}
-            .masonry-grid{grid-template-columns:1fr}
-            .gallery-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-            .btn, .button, input[type="submit"], a.btn{min-height:44px;padding:12px 20px;font-size:16px;width:100%;display:block;margin:10px 0}
-            a{padding:8px;display:inline-block}
-            input[type="text"],input[type="email"],input[type="tel"],input[type="number"],textarea,select{width:100%;padding:15px;font-size:16px;margin-bottom:15px;border:2px solid #ccc;border-radius:5px}
-            label{display:block;margin-bottom:5px;font-weight:bold}
-            .container,.wrapper,section{padding:15px!important;margin:10px 0!important}
-            table{display:block;overflow-x:auto;white-space:nowrap}
-        }
-        @media (max-width: 1024px) {
-          .gallery-grid, .masonry-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
-          .gallery-item, .masonry-item { height: auto !important; }
-        }
-          /* ===== Desktop layout fixes — add this at the END of your <style> block ===== */
-
-/* 1) Make hero flexible (no forced 100vh) and account for fixed header height */
-.hero {
-  min-height: calc(100vh - 80px); /* leave room for fixed header */
-  height: auto !important;
-  padding-top: 80px;              /* same header offset as existing code */
-  display: flex;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
+/* Override: ensure gallery shows 2 columns on small devices (iPhone X,etc.) */
+@media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+    .gallery-item { height: auto !important; }
 }
 
-/* Reduce hero height on very large screens so it doesn't dominate the page */
-@media (min-width: 1600px) {
-  .hero { min-height: 65vh; }
-}
-
-/* 2) Prevent gallery images from being aggressively cropped on desktop */
-@media (min-width: 993px) {
-  .gallery-item img {
-    object-fit: contain !important;
-    object-position: center;
-    background-color: var(--light);
-    width: 100%;
-    height: auto !important;
-  }
-  .gallery-item {
-    aspect-ratio: auto;
-    height: auto !important;
-  }
-}
-
-/* 3) Limit carousel / 3D container maximum height so it can't create huge gaps */
-.carousel-container {
-  max-height: 80vh;
-  overflow: hidden;
-}
-.image-carousel, .image-carousel .carousel-track {
-  height: auto !important;
-}
-
-/* 4) Optional: tighten footer spacing on very tall pages */
-footer {
-  padding-bottom: 30px;
-}
-
-/* ===== End of overrides ===== */  
-/* ===== hero: image element replacement & desktop behavior ===== */
-/* Paste this just before the closing </style> in your index.html */
-
-.hero {
-  position: relative;              /* container for absolute .hero-bg */
-  min-height: 65vh !important;     /* avoid forcing 100vh */
-  height: auto !important;
-  padding-top: 80px;               /* keeps header offset */
-  overflow: hidden;                /* prevent giant children from expanding page */
-  background-color: var(--light);  /* fallback if image fails */
-}
-
-/* Remove any existing background image on .hero (override) */
-.hero { background: none !important; }
-
-/* The hero image element fills the hero area */
-.hero-bg {
-  position: absolute;
-  inset: 0;                        /* top:0; right:0; bottom:0; left:0; */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;               /* mobile/small screens: cover */
-  object-position: center;
-  z-index: 0;
-  display: block;
-}
-
-/* Keep the content above the image */
-.hero .hero-content {
-  position: relative;
-  z-index: 5;
-  color: white; /* keep text visible */
-}
-
-/* Desktop: show the whole image (no extreme zoom) */
-@media (min-width: 993px) {
-  .hero-bg {
-    object-fit: contain !important; /* show full image without cropping on desktop */
-  }
-  .hero { min-height: 55vh !important; } /* slightly smaller on large screens */
-}
-
-/* Tighten safety on very large screens */
-@media (min-width: 1600px) {
-  .hero { min-height: 50vh !important; }
-}
-/* ===== end hero fixes ===== */
-            
+/* Tighten gap above image carousel */
+#carousel-animation { min-height: 0 !important; height: auto !important; margin: 0 0 8px !important; padding: 0 !important; }
+.image-carousel-container { margin-top: 0 !important; }
     </style>
-    <!-- Favicons: browsers will pick the most appropriate file/size -->
-    <!-- SVG first (modern browsers) -->
-    <link rel="icon" type="image/svg+xml" href="assets/dog_logo-removebg.png">
-    <link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/dog_logo-removebg.png">
-    <link rel="icon" type="image/svg+xml" sizes="16x16" href="assets/dog_logo-removebg.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/dog_logo-removebg.png">
-    <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#a82c2c">
-    <!-- Keep existing PNG/ICO links as fallback if you later add real PNG/ICO files -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/dog_logo-removebg.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/dog_logo-removebg.png">
-    <link rel="shortcut icon" href="assets/dog_logo-removebg.png">
-    <!-- Fallback to original full-size image (keeps existing file if you prefer) -->
-    <link rel="icon" href="assets/dog_logo-removebg.png" sizes="any">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -1378,17 +1305,15 @@ footer {
     </header>
 
     <!-- Hero Section -->
-<section class="hero">
-  <!-- hero background image as an <img> for consistent sizing -->
-  <img class="hero-bg" src="IMG-20250916-WA0011.jpg" alt="Ghillie of Wisconsin">
-  <div class="container">
-    <div class="hero-content">
-      <h1>Ghillie of Wisconsin</h1>
-      <p>Field-Bred Irish Setters</p>
-      <a href="#contact" class="btn">Inquire About Breeding</a>
-    </div>
-  </div>
-</section>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Ghillie of Wisconsin</h1>
+                <p>Field-Bred Irish Setters</p>
+                <a href="#contact" class="btn">Inquire About Breeding</a>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -1440,7 +1365,7 @@ UKC # P684-821, Redwing Tara (TAN1–Natural Abilities Test) UKC # P502-423, Fly
 
             <div style="margin-top: 50px;">
                 <h3 class="section-title">Health, Temperament, Drive, Energy Level, and Trainability</h3>
-                <p>Ghillie is in excellent health, as confirmed by Lakeview Veterinary Clinic, Madison, WI. He has a strong prey drive, enthusiastic and reliable recall, and a playfully affectionate temperament, making him an ideal home companion and hunting partner. Ghillie has stamina to last hours of hunting pheasant and grouse in the most challenging pheasant habitat of southern Wisconsin and grouse management forests of northern Wisconsin and Minnesota. He has an athletic, muscular build and striking mahogony coat, with a matching drive to find birds, true to his field-bred championship bloodlines. When at home, at least an hour of daily outdoor exercise to channel this energy and drive is needed. He is affectionate and playful, preferring to stay close to others--he loves to lean in close. He has very reliable recall in the field, and is a quick learner with inquisitiveness and an eagerness to please, making him easy to train and handle. His professional hunting trainers at Dale Creek Gun Dogs, attest to their enjoyment working with him. Socialization: Ghillie loves being with other dogs, playing at all levels of intensity, with a keen sense of what other dogs want. He is cautious with small children and people who he has not met before. Once he trusts them he becomes very affectionate and playful.</p>
+                <p>Ghillie is in excellent health, as confirmed by Lakeview Veterinary Clinic, Madison, WI. He has a strong prey drive, enthusiastic and reliable recall, and a playfully affectionate temperament, making him an ideal home companion and hunting partner. Ghillie has stamina to last hours of hunting pheasant and grouse in the most challenging pheasant habitat of southern Wisconsin and grouse management forests of northern Wisconsin and Minnesota. He has an athletic, muscular build and striking mahogony coat, with a matching drive to find birds, true to his field-bred championship bloodlines. When at home, at least an hour of daily outdoor exercise to channel this energy and drive is a needed. He is affectionate and playful, preferring to stay close to others--he loves to lean in close. He has very reliable recall in the field, and is a quick learner with inquisitiveness and an eagerness to please, making him easy to train and handle. His professional hunting trainers at Dale Creek Gun Dogs, attest to their enjoyment working with him. Socialization: Ghillie loves being with other dogs, playing at all levels of intensity, with a keen sense of what other dogs want. He is cautious with small children and people who he has not met before. Once he trusts them he becomes very affectionate and playful.</p>
                 <ul style="list-style: none; padding: 0; margin-top: 20px;">
                     <li><strong>Health Testing:</strong> Hips, Elbows, Eyes, Cardiac, Thyroid (OFA pending)</li>
                     <li><strong>Energy Level:</strong> High; requires daily exercise</li>
@@ -1453,7 +1378,7 @@ UKC # P684-821, Redwing Tara (TAN1–Natural Abilities Test) UKC # P502-423, Fly
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
-            <h2 class="section-title">Gallery</h2>
+            <h2 class="section-title">Gallery & Hobbies</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="Giant image.JPG" alt="Hunting Test">
@@ -1684,8 +1609,8 @@ UKC # P684-821, Redwing Tara (TAN1–Natural Abilities Test) UKC # P502-423, Fly
         <div class="container">
             <div class="footer-content">
                 <div>
-                    <div class="footer-logo">Red-Tail Irish Setter</div>
-                    <p>Irish Setter Breeding</p>
+                    <div class="footer-logo">Madison Irish Setter</div>
+                    <p>Premium Irish Setter Breeding</p>
                 </div>
                 
                 <div>
@@ -1709,7 +1634,7 @@ UKC # P684-821, Redwing Tara (TAN1–Natural Abilities Test) UKC # P502-423, Fly
             </div>
             
             <div class="copyright">
-                <p>&copy; 2026 Red-Tail Irish Setter Stud Services. All rights reserved.</p>
+                <p>&copy; 2023 Madison Irish Setter. All rights reserved.</p>
             </div>
         </div>
     </footer>
