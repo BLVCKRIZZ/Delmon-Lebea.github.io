@@ -824,21 +824,37 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* Video Section */
-        .video-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-        }
+/* Video Section */
+.video-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
 
-        .video-item {
-            text-align: center;
-            background-color: var(--light);
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
+/* Mobile: Force all 3 videos in ONE ROW */
+@media (max-width: 768px) {
+    .video-section {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+}
+
+/* Extra small phones: Stack videos vertically if needed */
+@media (max-width: 480px) {
+    .video-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+.video-item {
+    text-align: center;
+    background-color: var(--light);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
 
         .video-item:hover {
             transform: translateY(-5px);
