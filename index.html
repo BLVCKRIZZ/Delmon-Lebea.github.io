@@ -827,24 +827,8 @@
 /* Video Section */
 .video-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Always 3 videos in one row */
     gap: 50px;
-}
-
-/* Mobile: Force all 3 videos in ONE ROW */
-@media (max-width: 768px) {
-    .video-section {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
-}
-
-/* Extra small phones: Stack videos vertically if needed */
-@media (max-width: 480px) {
-    .video-section {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
 }
 
 .video-item {
@@ -856,30 +840,64 @@
     transition: transform 0.3s;
 }
 
-        .video-item:hover {
-            transform: translateY(-5px);
-        }
+.video-item:hover {
+    transform: translateY(-5px);
+}
 
-        .video-item video {
-            width: 100%;
-            aspect-ratio: 16/9;
-            object-fit: cover;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s;
-            max-height: 360px;
-        }
+.video-item h4 {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--dark);
+}
 
-        .video-item video:hover {
-            transform: scale(1.05);
-        }
+/* Tablets & iPads (481px - 1024px) */
+@media (max-width: 1024px) {
+    .video-section {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .video-item {
+        padding: 12px;
+    }
+    
+    .video-item h4 {
+        font-size: 0.9rem;
+    }
+}
 
-        .video-item h4 {
-            margin-top: 10px;
-            font-size: 1rem;
-            color: var(--dark);
-        }
+/* All Phones (320px - 480px) */
+@media (max-width: 480px) {
+    .video-section {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    
+    .video-item {
+        padding: 6px;
+    }
+    
+    .video-item h4 {
+        font-size: 0.7rem;
+        margin-top: 5px;
+    }
+}
 
+/* Extra small phones (320px and below) */
+@media (max-width: 320px) {
+    .video-section {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+    
+    .video-item {
+        padding: 4px;
+    }
+    
+    .video-item h4 {
+        font-size: 0.65rem;
+    }
+}
         /* Image Carousel Styles */
         .image-carousel-container {
             position: relative;
