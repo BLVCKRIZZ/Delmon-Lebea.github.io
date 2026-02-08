@@ -1607,37 +1607,50 @@ UKC # P684-821, Redwing Tara (TAN1–Natural Abilities Test) UKC # P502-423, Fly
                 </div>
             </div>
 
- /* Video Section */
-.video-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
-}
-
-/* Mobile: ALWAYS show 3 videos in one row */
-@media (max-width: 768px) {
-    .video-section {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-    }
-    
-    .video-item {
-        padding: 8px;
-    }
-    
-    .video-item h4 {
-        font-size: 0.8rem;
-    }
-}
-
-.video-item {
-    text-align: center;
-    background-color: var(--light);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
+            <!-- Video Section -->
+            <div class="video-section">
+                <div class="video-item">
+                    <div style="position:relative;aspect-ratio:53/30;">
+                        <iframe
+                            loading="lazy" 
+                            title="Pointing Video"
+                            src="https://play.gumlet.io/embed/69886a094db88a967f640096"
+                            style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+                            referrerpolicy="origin"
+                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+                        </iframe>
+                    </div>
+                    <h4>Pointing Video</h4>
+                </div>
+                <div class="video-item">
+                    <div style="position:relative;aspect-ratio:53/30;">
+                        <iframe
+                            loading="lazy" 
+                            title="Backing Video"
+                            src="https://play.gumlet.io/embed/69886a29924a60df4b34ba40"
+                            style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+                            referrerpolicy="origin"
+                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+                        </iframe>
+                    </div>
+                    <h4>Backing Video</h4>
+                </div>
+                <div class="video-item">
+                    <div style="position:relative;aspect-ratio:52/29;">
+                        <iframe
+                            loading="lazy" 
+                            title="Training on Quail"
+                            src="https://play.gumlet.io/embed/69886748924a60df4b346b8f"
+                            style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+                            referrerpolicy="origin"
+                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+                        </iframe>
+                    </div>
+                    <h4>Training on Quail</h4>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Footer -->
     <footer>
         <div class="container">
