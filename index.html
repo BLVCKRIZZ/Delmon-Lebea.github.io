@@ -823,11 +823,10 @@
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-
 /* Video Section */
 .video-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Always 3 videos in one row */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 50px;
 }
 
@@ -848,55 +847,6 @@
     margin-top: 10px;
     font-size: 1rem;
     color: var(--dark);
-}
-
-/* Tablets & iPads (481px - 1024px) */
-@media (max-width: 1024px) {
-    .video-section {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    }
-    
-    .video-item {
-        padding: 12px;
-    }
-    
-    .video-item h4 {
-        font-size: 0.9rem;
-    }
-}
-
-/* All Phones (320px - 480px) */
-@media (max-width: 480px) {
-    .video-section {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-    }
-    
-    .video-item {
-        padding: 6px;
-    }
-    
-    .video-item h4 {
-        font-size: 0.7rem;
-        margin-top: 5px;
-    }
-}
-
-/* Extra small phones (320px and below) */
-@media (max-width: 320px) {
-    .video-section {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 5px;
-    }
-    
-    .video-item {
-        padding: 4px;
-    }
-    
-    .video-item h4 {
-        font-size: 0.65rem;
-    }
 }
         /* Image Carousel Styles */
         .image-carousel-container {
