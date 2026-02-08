@@ -3,24 +3,1920 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A brief description of the page.">
-    <title>Your Page Title</title>
-    <link rel="stylesheet" href="styles.css">
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assetsfavicon-32x32.pn">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#a82c2c">
+    <title>Irish Setter Stud Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <style>
+        :root {
+            --primary: #a82c2c;
+            --secondary: #f3bc7b;
+            --dark: #2c1a1d;
+            --light: #f8f1e5;
+            --accent: #4285f4;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+
+        /* Additional Responsive Adjustments (Tablets & Phones) */
+        @media (max-width: 1024px) {
+            .container { width: 95%; max-width: 960px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+            .image-carousel { height: 320px; }
+            .carousel-slide img { max-height: 260px; }
+            .video-item video { aspect-ratio: 16/9; object-fit: cover; max-height: 260px; }
+            .carousel-btn { padding: 10px 12px; font-size: 20px; }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+            .gallery-item { aspect-ratio: 4/3; }
+            .image-carousel { height: 260px; }
+            .carousel-slide img { max-height: 220px; }
+            .carousel-btn { padding: 8px 10px; font-size: 18px; }
+            .carousel-dots { gap: 8px; margin-top: 6px; }
+            header { padding: 0.6rem 0; }
+            .logo-text { font-size: 1.25rem; }
+            body { font-size: 15px; }
+        }
+
+        @media (max-width: 480px) {
+            .image-carousel { height: 200px; }
+            .carousel-slide img { max-height: 160px; }
+            .video-item video { aspect-ratio: 16/9; object-fit: cover; max-height: 180px; }
+            .carousel-btn { font-size: 16px; padding: 6px 8px; }
+            .section-title { font-size: 1.4rem; }
+            .gallery-item-overlay h3 { font-size: 0.95rem; padding: 8px; }
+            .btn { padding: 10px 18px; }
+        }
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-bar input {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .search-bar button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: var(--dark);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger i {
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('IMG-20250916-WA0011.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+        
+        .about-image.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .about-text.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .detail-item {
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .detail-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .detail-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3; /* consistent thumbnail ratio */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+        
+        .gallery-item.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* fill the thumbnail while keeping center */
+            object-position: center;
+            transition: transform 0.5s;
+        }
+
+        /* Show full image (no cropping) for specific tiles */
+        .gallery-item--contain img {
+            object-fit: contain;
+            object-position: center;
+            background-color: var(--light);
+            padding: 6px;
+        }
+        /* On hover, switch to a cropped zoom so viewer sees a closer detail */
+        .gallery-item--contain:hover img {
+            object-fit: cover;
+            transform: scale(1.12);
+            transition: object-fit 0.25s ease, transform 0.45s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-item-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Pedigree Section */
+        .pedigree {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .family-tree {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .family-tree.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tree-level {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .tree-node {
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 180px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .tree-node:after {
+            content: '';
+            position: absolute;
+            background-color: var(--primary);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+        
+        .contact-form.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .contact-info.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* 3D Circular Carousel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Increased width for larger images */
+    height: 500px; /* Adjusted height for rectangular images */
+    margin: 0 auto;
+    perspective: 1200px; /* Creates the 3D effect */
+}
+
+.carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotateCarousel 15s linear infinite; /* Smooth rotation */
+}
+
+.carousel img {
+    position: absolute;
+    width: 300px; /* Rectangular image width */
+    height: 200px; /* Rectangular image height */
+    object-fit: cover;
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Position images evenly around the circle */
+.carousel img:nth-child(1) {
+    transform: rotateY(0deg) translateZ(400px);
+}
+.carousel img:nth-child(2) {
+    transform: rotateY(45deg) translateZ(400px);
+}
+.carousel img:nth-child(3) {
+    transform: rotateY(90deg) translateZ(400px);
+}
+.carousel img:nth-child(4) {
+    transform: rotateY(135deg) translateZ(400px);
+}
+.carousel img:nth-child(5) {
+    transform: rotateY(180deg) translateZ(400px);
+}
+.carousel img:nth-child(6) {
+    transform: rotateY(225deg) translateZ(400px);
+}
+.carousel img:nth-child(7) {
+    transform: rotateY(270deg) translateZ(400px);
+}
+.carousel img:nth-child(8) {
+    transform: rotateY(315deg) translateZ(400px);
+}
+
+/* Animation for rotating the carousel */
+@keyframes rotateCarousel {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 100%;
+        height: 400px;
+    }
+
+    .carousel img {
+        width: 200px;
+        height: 150px;
+    }
+}
+        
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: white;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 100%;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .search-bar {
+                display: none;
+            }
+
+            /* Carousel Section */
+.carousel-section {
+    padding: 50px 0;
+    background-color: var(--light);
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Increased width for larger images */
+    height: 500px; /* Adjusted height for rectangular images */
+    margin: 0 auto;
+    perspective: 1200px; /* Creates the 3D effect */
+}
+
+.carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotateCarousel 15s linear infinite; /* Smooth rotation */
+}
+
+.carousel img {
+    position: absolute;
+    width: 300px; /* Rectangular image width */
+    height: 200px; /* Rectangular image height */
+    object-fit: cover;
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Position images evenly around the circle */
+.carousel img:nth-child(1) {
+    transform: rotateY(0deg) translateZ(400px);
+}
+.carousel img:nth-child(2) {
+    transform: rotateY(45deg) translateZ(400px);
+}
+.carousel img:nth-child(3) {
+    transform: rotateY(90deg) translateZ(400px);
+}
+.carousel img:nth-child(4) {
+    transform: rotateY(135deg) translateZ(400px);
+}
+.carousel img:nth-child(5) {
+    transform: rotateY(180deg) translateZ(400px);
+}
+.carousel img:nth-child(6) {
+    transform: rotateY(225deg) translateZ(400px);
+}
+.carousel img:nth-child(7) {
+    transform: rotateY(270deg) translateZ(400px);
+}
+.carousel img:nth-child(8) {
+    transform: rotateY(315deg) translateZ(400px);
+}
+
+/* Animation for rotating the carousel */
+@keyframes rotateCarousel {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 100%;
+        height: 400px;
+    }
+
+    .carousel img {
+        width: 200px;
+        height: 150px;
+    }
+}
+        }
+
+        /* Highlighted text style */
+        .highlight {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+        }
+
+        /* Masonry Grid */
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 50px;
+            opacity: 1; /* Ensure visibility */
+            transform: translateY(0); /* Remove animation delay */
+        }
+
+        .masonry-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .masonry-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .masonry-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Video Section */
+        .video-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .video-item {
+            text-align: center;
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-item video {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            max-height: 360px;
+        }
+
+        .video-item video:hover {
+            transform: scale(1.05);
+        }
+
+        .video-item h4 {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: var(--dark);
+        }
+
+        /* Image Carousel Styles */
+        .image-carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 640px; /* controlled max width */
+            margin: 12px auto;
+            padding: 0 8px;
+        }
+
+        .image-carousel {
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+            height: 360px; /* fixed carousel height to preserve ratio */
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--light);
+            height: 100%;
+        }
+
+        .carousel-slide img {
+            display: block;
+            max-width: 100%;
+            max-height: 320px; /* cap height so carousel isn't too tall */
+            width: auto;
+            height: auto;
+            object-fit: contain; /* show entire image */
+            border-radius: 10px;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(168, 44, 44, 0.8);
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            font-size: 22px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--primary);
+        }
+
+        .carousel-btn.prev { left: 8px; }
+        .carousel-btn.next { right: 8px; }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 8px;
+            padding: 0 12px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dot.active { background-color: var(--primary); }
+
+        /* Center the Lottie animation */
+        #carousel-animation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120px; /* tightened height to reduce gap */
+            overflow: hidden;
+        }
+
+        /* Lightbox styles */
+        .lightbox { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.9); z-index: 2200; padding: 20px; }
+        .lightbox.open { display: flex; }
+        .lightbox-img { max-width: 100%; max-height: 90vh; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); }
+        .lightbox-close, .lightbox-prev, .lightbox-next { position: absolute; background: rgba(0,0,0,0.5); color: #fff; border: none; padding: 10px 14px; font-size: 22px; cursor: pointer; border-radius: 6px; }
+        .lightbox-close { top: 18px; right: 18px; }
+        .lightbox-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+        .lightbox-next { right: 18px; top: 50%; transform: translateY(-50%); }
+        .lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.12); }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #carousel-animation {
+        height: 300px; /* Smaller height for mobile */
+    }
+}
+
+/* Mobile Optimization - Small Phones (up to 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    header {
+        padding: 0.5rem 0;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    nav {
+        padding: 0.8rem 0;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .logo i {
+        font-size: 1.5rem !important;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding-top: 60px;
+        height: auto;
+        min-height: 70vh;
+    }
+
+    .hero h1 {
+        font-size: 1.7rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn {
+        padding: 11px 22px;
+        font-size: 0.9rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* General Sections */
+    .about, .gallery, .pedigree, .contact {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+        margin-bottom: 35px;
+    }
+
+    .section-title:after {
+        width: 60px;
+        bottom: -12px;
+    }
+
+    /* About Section */
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .detail-item {
+        padding: 12px;
+    }
+
+    .detail-item i {
+        font-size: 1.5rem;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .about-text h3,
+    .about-text h4 {
+        font-size: 1.2rem;
+    }
+
+    /* Gallery Section */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .gallery-item {
+        height: 180px;
+    }
+
+    .gallery-item-overlay {
+        padding: 15px;
+    }
+
+    /* Contact Section */
+    .contact-form {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .contact-form h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+
+    .form-group textarea {
+        min-height: 100px;
+    }
+
+    .contact-info h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+
+    .info-item {
+        margin-bottom: 20px;
+        align-items: flex-start;
+    }
+
+    .info-item i {
+        font-size: 1.2rem;
+        margin-right: 12px;
+        margin-top: 2px;
+    }
+
+    .info-item h4 {
+        font-size: 1rem;
+        margin-bottom: 4px;
+    }
+
+    /* Carousel */
+    .carousel-container {
+        height: 240px;
+        max-width: 100%;
+    }
+
+    .carousel img {
+        width: 120px;
+        height: 90px;
+    }
+
+    #carousel-animation {
+        height: 220px;
+    }
+
+    /* Pedigree Section */
+    .family-tree {
+        flex-direction: column;
+    }
+
+    .tree-node {
+        width: 100%;
+        max-width: 180px;
+        margin: 0 auto;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-logo {
+        font-size: 1.4rem;
+    }
+
+    .footer-links {
+        font-size: 0.9rem;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-links a {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Tablet Optimization (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .gallery-item {
+        height: 220px;
+    }
+
+    .about-content,
+    .contact-content {
+        gap: 30px;
+    }
+
+    .carousel-container {
+        height: 380px;
+    }
+
+    .carousel img {
+        width: 250px;
+        height: 170px;
+    }
+
+    #carousel-animation {
+        height: 350px;
+    }
+}
+
+/* Medium Devices (769px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .container {
+        width: 92%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .carousel-container {
+        height: 450px;
+    }
+
+    .carousel img {
+        width: 280px;
+        height: 190px;
+    }
+}
+
+/* Large Screens (993px and above) */
+@media (min-width: 993px) {
+    .carousel-container {
+        height: 500px;
+    }
+
+    .carousel img {
+        width: 300px;
+        height: 200px;
+    }
+}
+/* Override: ensure gallery shows 2 columns on small devices (iPhone X,etc.) */
+@media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+    .gallery-item { height: auto !important; }
+}
+
+/* Tighten gap above image carousel */
+#carousel-animation { min-height: 0 !important; height: auto !important; margin: 0 0 8px !important; padding: 0 !important; }
+.image-carousel-container { margin-top: 0 !important; }
+    </style>
 </head>
 <body>
+    <!-- Header & Navigation -->
     <header>
-        <h1>Welcome to My Website</h1>
+        <div class="container">
+            <nav>
+            <div class="logo" style="display:flex;align-items:center;gap:12px">
+  <img src="/assets/logo bird.png" alt="Red-Tail Irish Setter logo" width="55" height="55" style="display:block;border-radius:6px;object-fit:cover">
+  <span class="logo-text">Red-Tail Irish Setter Stud Services</span>
+</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#pedigree">Pedigree</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." aria-label="Search">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <h2>About Us</h2>
-            <p>This section could contain a description about the website. You can replace this text with your own content.</p>
-        </section>
-    </main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Ghillie of Wisconsin</h1>
+                <p>Field-Bred Irish Setters</p>
+                <a href="#contact" class="btn">Inquire About Breeding</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Ghillie</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="IMG-20250916-WA0001.jpg" width="500" height="400" alt="Ghillie - Irish Setter">
+                </div>
+                <div class="about-text">
+                    <h3>Meet Ghillie</h3>
+                    <p>With his striking dark mahogany red coat, athletic build, and friendly temperament, Ghillie represents the best qualities of the field-bred Irish Setter. He comes from a championship bloodline with excellent health records and conforms to all breed standards. A 3-year-old AKC purebred with a Junior Hunter title (JH), Ghillie has a powerful and eager bird-hunting drive, a natural pointing instinct, easy trainability and an energetic, rollicking personality.</p>
+                    
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <h4>Date of Birth</h4>
+                            <p>December 28, 2022</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-weight"></i>
+                            <h4>Weight</h4>
+                            <p>65 lbs</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-ruler-vertical"></i>
+                            <h4>Height</h4>
+                            <p>26 inches</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-palette"></i>
+                            <h4>Color</h4>
+                            <p>Dark Mahogany Red with Copper Blond Feathering and White Star</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px;">
+                <h3 class="section-title">Ghillie's Pedigree</h3>
+                <p>Ghillie comes from an exceptional lineage of champion Irish Setters with proven track records in field performance and excellent health histories.</p>
+                <ul style="list-style: none; padding: 0; margin-top: 20px;">
+                    <li><strong>Sire:</strong> Dexter’s Magnificent Hubbard (AKC #SR98927505)</li>
+                    <li><strong>Dam:</strong> Princess Diamond Bernard (AKC #SS23036401)</li>
+                    <li><strong>Titles in Pedigree:</strong> DC Highfeather Raise ‘N A Ruckus CD MH (Dual Champion, Companion Dog, Master Hunter) SR08556001, Saeterelva’s Russell JH (Junior Hunter) SR26615601,  Celtic's Congenial SR93948102, Red Knight’s Adventure TAN (TAN4–Natural Ability Test, 4th Degree; GUN1– Gun Dog)
+UKC # P684-821, Redwing Tara (TAN1–Natural Abilities Test) UKC # P502-423, Flygdalens Aragorn TAN (TAN1– Natural Abilities Test) UKC # P461-367, Fiona O’Conloch TAN (TAN2– Natural Abilities Test, 2nd Degree) UKC # P473-498</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 50px;">
+                <h3 class="section-title">Health, Temperament, Drive, Energy Level, and Trainability</h3>
+                <p>Ghillie is in excellent health, as confirmed by Lakeview Veterinary Clinic, Madison, WI. He has a strong prey drive, enthusiastic and reliable recall, and a playfully affectionate temperament, making him an ideal home companion and hunting partner. Ghillie has stamina to last hours of hunting pheasant and grouse in the most challenging pheasant habitat of southern Wisconsin and grouse management forests of northern Wisconsin and Minnesota. He has an athletic, muscular build and striking mahogony coat, with a matching drive to find birds, true to his field-bred championship bloodlines. When at home, at least an hour of daily outdoor exercise to channel this energy and drive is needed. He is affectionate and playful, preferring to stay close to others--he loves to lean in close. He has very reliable recall in the field, and is a quick learner with inquisitiveness and an eagerness to please, making him easy to train and handle. His professional hunting trainers at Dale Creek Gun Dogs, attest to their enjoyment working with him. Socialization: Ghillie loves being with other dogs, playing at all levels of intensity, with a keen sense of what other dogs want. He is cautious with small children and people who he has not met before. Once he trusts them he becomes very affectionate and playful.</p>
+                <ul style="list-style: none; padding: 0; margin-top: 20px;">
+                    <li><strong>Health Testing:</strong> Hips, Elbows, Eyes, Cardiac, Thyroid (OFA pending)</li>
+                    <li><strong>Energy Level:</strong> High; requires daily exercise</li>
+                    <li><strong>Socialization:</strong> Friendly with other dogs, cautious with strangers</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Giant image.JPG" alt="Hunting Test">
+                    <div class="gallery-item-overlay">
+                        <h3>Hunting Test</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-09-17 at 14.51.02_3d816f2a.jpg" alt="Show Championships">
+                    <div class="gallery-item-overlay">
+                        <h3>Hunting Test Ribbons</h3>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item--contain">
+                    <img src="Swimming days.jpg" alt="Swimming">
+                    <div class="gallery-item-overlay">
+                        <h3>Swimming</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20250916-WA0003.jpg" alt="Family Time">
+                    <div class="gallery-item-overlay">
+                        <h3>Family Time</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-09-17 at 15.03.15_d73c4d56.jpg" alt="Family Time">
+                    <div class="gallery-item-overlay">
+                        <h3>Certification</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="n.jpg" alt="Training">
+                    <div class="gallery-item-overlay">
+                        <h3>Pheasant Hunting</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pedigree Section -->
+    <section id="pedigree" class="pedigree">
+        <div class="container">
+            <h2 class="section-title">Pedigree & Bloodline</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Ghillie's Irish Setter pedigree contains Dual Champion (AKC Show Ring and Field Trial) and extensive field-bred (UKC and AKC Hunting Test) lineage.</p>
+            
+            <div class="family-tree">
+                <div class="tree-level">
+                    <div class="tree-node">
+                        <h4>Father: Dexter’s Magnificent Hubbard </h4>
+                        <p>AKC# SR98927505</p>
+                    </div>
+                    <div class="tree-node">
+                        <h4>Mother: Princess Diamond Bernard</h4>
+                        <p>AKC# SS23036401</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px; background-color: var(--light); padding: 30px; border-radius: 15px;">
+                <h3 style="text-align: center; margin-bottom: 20px;">Health Testing</h3>
+                <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                    <div style="text-align: center; padding: 15px;">
+                        <i class="fas fa-heart" style="font-size: 2.5rem; color: var(--primary);"></i>
+                        <h4>Cardiac</h4>
+                        <p>Clear</p>
+                    </div>
+                    <div style="text-align: center; padding: 15px;">
+                        <i class="fas fa-eye" style="font-size: 2.5rem; color: var(--primary);"></i>
+                        <h4>Eyes</h4>
+                        <p>Clear</p>
+                    </div>
+                    <div style="text-align: center; padding: 15px;">
+                        <i class="fas fa-dna" style="font-size: 2.5rem; color: var(--primary);"></i>
+                        <h4>DNA</h4>
+                        <p>Coming Soon</p>
+                    </div>
+                    <div style="text-align: center; padding: 15px;">
+                        <i class="fas fa-bone" style="font-size: 2.5rem; color: var(--primary);"></i>
+                        <h4>Hips</h4>
+                        <p>Excellent</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact for Breeding</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Inquiry Form</h3>
+                    <form id="inquiry-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="user_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="user_email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="user_phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell us about your dog</label>
+                            <textarea id="message" name="dog_info" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit Inquiry</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>We're interested in connecting with responsible owners of female Irish Setters for breeding purposes. Please reach out with information about your dog.</p>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Madison, Wisconsin</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>natehale@hotmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Cell Phone</h4>
+                            <p>(608) 334-8789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Life of Ghillie Section -->
+    <section id="life-of-ghillie" class="life-of-ghillie">
+        <div class="container">
+            <h2 class="section-title">Life of Ghillie</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 20px;">
+                Explore Ghillie's adventures, training sessions, and everyday moments through photos and videos.
+            </p>
+
+            <!-- Lottie Animation Container -->
+            <div id="carousel-animation" style="width: 100%; max-width: 600px; margin: 0 auto;"></div>
+
+            <!-- Fallback for browsers without Lottie support -->
+            <noscript>
+                <p style="text-align: center; color: var(--dark);">
+                    Unable to load the carousel animation. Please enable JavaScript or update your browser.
+                </p>
+            </noscript>
+
+            <!-- Image Carousel Section -->
+            <div class="image-carousel-container">
+                <div class="image-carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="a.jpg" alt="a"></div>
+                        <div class="carousel-slide"><img src="b.jpeg" alt="b"></div>
+                        <div class="carousel-slide"><img src="c.jpeg" alt="c"></div>
+                        <div class="carousel-slide"><img src="d.jpeg" alt="d"></div>
+                        <div class="carousel-slide"><img src="e.jpeg" alt="e"></div>
+                        <div class="carousel-slide"><img src="f.jpg" alt="f"></div>
+                        <div class="carousel-slide"><img src="g.JPG" alt="g"></div>
+                        <div class="carousel-slide"><img src="h.jpg" alt="h"></div>
+                        <div class="carousel-slide"><img src="i.jpg" alt="i"></div>
+                        <div class="carousel-slide"><img src="j.jpg" alt="j"></div>
+                        <div class="carousel-slide"><img src="k.jpg" alt="k"></div>
+                        <div class="carousel-slide"><img src="l.JPEG" alt="l"></div>
+                        <div class="carousel-slide"><img src="m.JPEG" alt="m"></div>
+                        <div class="carousel-slide"><img src="IMG-20250916-WA0007.jpg" alt="n"></div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
+                <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
+                <div class="carousel-dots">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                    <span class="dot" onclick="currentSlide(7)"></span>
+                    <span class="dot" onclick="currentSlide(8)"></span>
+                    <span class="dot" onclick="currentSlide(9)"></span>
+                    <span class="dot" onclick="currentSlide(10)"></span>
+                    <span class="dot" onclick="currentSlide(11)"></span>
+                    <span class="dot" onclick="currentSlide(12)"></span>
+                    <span class="dot" onclick="currentSlide(13)"></span>
+                    <span class="dot" onclick="currentSlide(14)"></span>
+                </div>
+            </div>
+
+            <!-- Video Section -->
+            <div class="video-section">
+                <div class="video-item">
+                    <video controls>
+                        <source src="WhatsApp Video 2025-09-20 at 01.49.41_a8b40492.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h4>Pointing Video</h4>
+                </div>
+                <div class="video-item">
+                    <video controls>
+                        <source src="WhatsApp Video 2025-09-20 at 01.49.40_3b7f51d8.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h4>Backing Video</h4>
+                </div>
+                <div class="video-item">
+                    <video controls>
+                                               <source src="assets/Training on quail.mp4" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
+                    <h4>Training on Quail</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Your Website Name</p>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Red-Tail Setter</div>
+                    <p>Rolliking Red Setters Stud Services</p>
+                </div>
+                
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#pedigree">Pedigree</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Follow Ghillie</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61586602119715"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/redtailsetters?igsh=eTFyZmttYjA3eHpm"><i class="fab fa-instagram"></i></a>
+                        <a href="http://www.youtube.com/@nathanielh1001"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Red Tail Irish Setter Stud Services</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Lightbox markup -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Close">×</button>
+        <button class="lightbox-prev" aria-label="Previous">❮</button>
+        <img class="lightbox-img" src="" alt="">
+        <button class="lightbox-next" aria-label="Next">❯</button>
+    </div>
+
+    <script>
+        // Scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, observerOptions);
+            
+            // Elements to animate
+            const animatedElements = document.querySelectorAll('.about-image, .about-text, .gallery-item, .family-tree, .contact-form, .contact-info');
+            
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Form submission (EmailJS)
+            try {
+                if (window.emailjs) {
+                    emailjs.init('T4P7Tql1K_4TZlsYo'); // EmailJS public key rotated to final value
+                }
+            } catch (err) {
+                console.warn('EmailJS not loaded or init failed', err);
+            }
+
+            const inquiryForm = document.getElementById('inquiry-form');
+            if (inquiryForm) {
+                inquiryForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (!window.emailjs) {
+                        alert('Email service not available. Please try again later.');
+                        return;
+                    }
+
+                    emailjs.sendForm('service_v9cesmr', 'template_nytr96q', this)
+                        .then(function() {
+                            alert('Inquiry sent — thank you!');
+                            inquiryForm.reset();
+                        }, function(error) {
+                            console.error('EmailJS error:', error);
+                            alert('Failed to send inquiry. Please try again later.');
+                        });
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.querySelector('.search-bar input');
+            const searchButton = document.querySelector('.search-bar button');
+
+            searchButton.addEventListener('click', function () {
+                const query = searchInput.value.trim().toLowerCase();
+                if (!query) {
+                    alert('Please enter a search term.');
+                    return;
+                }
+
+                // Remove previous highlights
+                const highlightedElements = document.querySelectorAll('.highlight');
+                highlightedElements.forEach(el => {
+                    const parent = el.parentNode;
+                    parent.replaceChild(document.createTextNode(el.textContent), el);
+                });
+
+                // Highlight matches
+                const highlightMatches = (node) => {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        const text = node.textContent;
+                        const matchIndex = text.toLowerCase().indexOf(query);
+                        if (matchIndex !== -1) {
+                            const span = document.createElement('span');
+                            span.className = 'highlight';
+                            span.textContent = text.substring(matchIndex, matchIndex + query.length);
+
+                            const before = document.createTextNode(text.substring(0, matchIndex));
+                            const after = document.createTextNode(text.substring(matchIndex + query.length));
+
+                            const parent = node.parentNode;
+                            parent.replaceChild(after, node);
+                            parent.insertBefore(span, after);
+                            parent.insertBefore(before, span);
+                        }
+                    } else if (node.nodeType === Node.ELEMENT_NODE && node.childNodes) {
+                        node.childNodes.forEach(child => highlightMatches(child));
+                    }
+                };
+
+                document.body.childNodes.forEach(child => highlightMatches(child));
+
+                // Scroll to the first match
+                const firstMatch = document.querySelector('.highlight');
+                if (firstMatch) {
+                    firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    alert('No matches found.');
+                }
+            });
+        });
+
+        // Image Carousel Functionality
+        let currentSlideIndex = 1;
+
+        function moveCarousel(n) {
+            showSlide(currentSlideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlide(currentSlideIndex = n);
+        }
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.dot');
+
+            if (n > slides.length) {
+                currentSlideIndex = 1;
+            }
+            if (n < 1) {
+                currentSlideIndex = slides.length;
+            }
+
+            const offset = -(currentSlideIndex - 1) * 100;
+            document.querySelector('.carousel-track').style.transform = `translateX(${offset}%)`;
+
+            dots.forEach(dot => dot.classList.remove('active'));
+            if (dots[currentSlideIndex - 1]) {
+                dots[currentSlideIndex - 1].classList.add('active');
+            }
+        }
+
+        // Initialize carousel with auto-scroll and lightbox
+        document.addEventListener('DOMContentLoaded', function() {
+            showSlide(currentSlideIndex);
+
+            const carouselContainer = document.querySelector('.image-carousel-container');
+            let autoSlideInterval = setInterval(() => moveCarousel(1), 3000);
+
+            // Pause on hover, resume on leave
+            if (carouselContainer) {
+                carouselContainer.addEventListener('mouseenter', () => {
+                    clearInterval(autoSlideInterval);
+                });
+                carouselContainer.addEventListener('mouseleave', () => {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = setInterval(() => moveCarousel(1), 3000);
+                });
+            }
+
+            // Lightbox initialization
+            const carouselImgs = Array.from(document.querySelectorAll('.carousel-slide img'));
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox ? lightbox.querySelector('.lightbox-img') : null;
+            const prevBtn = lightbox ? lightbox.querySelector('.lightbox-prev') : null;
+            const nextBtn = lightbox ? lightbox.querySelector('.lightbox-next') : null;
+            const closeBtn = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+            let lightboxIndex = 0;
+
+            carouselImgs.forEach((img, idx) => {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', () => openLightbox(idx));
+            });
+            // Open a gallery thumbnail in the page lightbox (single click)
+const galleryImgs = document.querySelectorAll('.gallery-grid .gallery-item img');
+
+galleryImgs.forEach(img => {
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', () => {
+    if (!lightbox || !lightboxImg) return;
+    lightbox.classList.add('open');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || '';
+    // prevent page scrolling while lightbox is open
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+            function openLightbox(idx) {
+                if (!lightbox || !lightboxImg) return;
+                lightbox.classList.add('open');
+                lightboxImg.src = carouselImgs[idx].src;
+                lightboxImg.alt = carouselImgs[idx].alt || '';
+                lightboxIndex = idx;
+                if (autoSlideInterval) clearInterval(autoSlideInterval);
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                if (!lightbox) return;
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+                if (carouselContainer) {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = setInterval(() => moveCarousel(1), 3000);
+                }
+            }
+
+            if (prevBtn) prevBtn.addEventListener('click', () => {
+                lightboxIndex = (lightboxIndex - 1 + carouselImgs.length) % carouselImgs.length;
+                if (lightboxImg) lightboxImg.src = carouselImgs[lightboxIndex].src;
+            });
+            if (nextBtn) nextBtn.addEventListener('click', () => {
+                lightboxIndex = (lightboxIndex + 1) % carouselImgs.length;
+                if (lightboxImg) lightboxImg.src = carouselImgs[lightboxIndex].src;
+            });
+            if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+
+            if (lightbox) {
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) closeLightbox();
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox || !lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft' && prevBtn) prevBtn.click();
+                if (e.key === 'ArrowRight' && nextBtn) nextBtn.click();
+            });
+        });
+
+        // Touch swipe support for carousel (mobile)
+        (function() {
+            let track = null;
+            document.addEventListener('DOMContentLoaded', function() {
+                track = document.querySelector('.carousel-track');
+                if (!track) return;
+                let startX = 0; let endX = 0; const threshold = 40;
+                track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, {passive:true});
+                track.addEventListener('touchmove', function(e) { endX = e.touches[0].clientX; }, {passive:true});
+                track.addEventListener('touchend', function() {
+                    const dx = endX - startX;
+                    if (Math.abs(dx) > threshold) {
+                        if (dx < 0) moveCarousel(1); else moveCarousel(-1);
+                    }
+                    startX = endX = 0;
+                }, {passive:true});
+            });
+        })();
+    </script>
 </body>
 </html>
